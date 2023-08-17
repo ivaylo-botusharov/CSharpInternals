@@ -17,9 +17,9 @@ We have class "Derived" which inherits from "Parent" and overrides the "DoSometh
 5. Parent - 'Waldo' property initialization
 6. Parent - constructor invocation
 7. Parent - constructor body execution, calls Child's overriden DoSomething() method
-8. Child - overriden DoSomething() method execution:
-8.1. Makes bar's value to lowercase and prints it
-8.2. Tries to lowercase foo's value and print it, but gets NullReferenceException since foo is null
+8. Child - overriden DoSomething() method execution:  
+8.1. Makes bar's value to lowercase and prints it.  
+8.2. Tries to lowercase foo's value and print it, but gets NullReferenceException since foo is null  
 
 *Note:* Child - DoSomething() - if we comment ```Console.WriteLine(this.foo.ToLower());``` we will notice that Child's default constructor body is executed after the Child's DoSmething() method and foo field is initialized.  
 
