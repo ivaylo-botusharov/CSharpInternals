@@ -1,4 +1,4 @@
-# Virtual member call in Constructor
+# Virtual member call in constructor
 
 *Question:* Is it ok to call C# class virtual member within a constructor?
 
