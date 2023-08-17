@@ -22,3 +22,9 @@ We have class "Derived" which inherits from "Parent" and overrides the "DoSometh
 8.2. Tries to lowercase foo's value and print it, but gets NullReferenceException since foo is null
 
 *Note:* Child - DoSomething() - if we comment ```Console.WriteLine(this.foo.ToLower());``` we will notice that Child's default constructor body is executed after the Child's DoSmething() method and foo field is initialized.  
+
+-------------
+
+*References:*
+
+[Virtual member call in a constructor](https://stackoverflow.com/questions/119506/virtual-member-call-in-a-constructor)  
