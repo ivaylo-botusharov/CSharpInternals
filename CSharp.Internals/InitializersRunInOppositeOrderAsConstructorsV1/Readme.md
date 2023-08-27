@@ -1,5 +1,7 @@
-# Why Do Initializers Run In The Opposite Order As Constructors?
-(Eric Lippert)  
+# Initializers Run In The Opposite Order As Constructors (V1)
+
+*Inspired by:* [Why Do Initializers Run In The Opposite Order As Constructors? - Part One](https://ericlippert.com/2008/02/15/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one/)  
+(by Eric Lippert)  
 
 Class members initialization execution order:  
 
@@ -28,7 +30,6 @@ Class members initialization execution order:
 12. 'Derived' class constructor body execution  
 
 
-
 Printed output:  
 
 ```
@@ -44,11 +45,14 @@ Derived constructor
 
 Fabulous adventures in coding (Eric Lippert's blog)  
 
-[Why Do Initializers Run In The Opposite Order As Constructors? Part One](https://ericlippert.com/2008/02/15/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one/)  
+Eric Lippert's personal website:  
 
-[Why Do Initializers Run In The Opposite Order As Constructors? Part One](https://docs.microsoft.com/en-us/archive/blogs/ericlippert/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one)  
+[Why Do Initializers Run In The Opposite Order As Constructors? Part One](https://ericlippert.com/2008/02/15/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one/)  
 
 [Why Do Initializers Run In The Opposite Order As Constructors? Part Two](https://ericlippert.com/2008/02/18/why-do-initializers-run-in-the-opposite-order-as-constructors-part-two/)  
 
-[Why Do Initializers Run In The Opposite Order As Constructors? Part Two](https://docs.microsoft.com/en-us/archive/blogs/ericlippert/why-do-initializers-run-in-the-opposite-order-as-constructors-part-two)  
+Eric Lippert's blog on MS Learn:  
 
+[Why Do Initializers Run In The Opposite Order As Constructors? Part One](https://learn.microsoft.com/en-us/archive/blogs/ericlippert/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one)  
+
+[Why Do Initializers Run In The Opposite Order As Constructors? Part Two](https://learn.microsoft.com/en-us/archive/blogs/ericlippert/why-do-initializers-run-in-the-opposite-order-as-constructors-part-two)  

@@ -18,13 +18,24 @@
             "stopAtEntry": false
         },
         {
-            "name": ".NET Core Launch (InitializersRunInOppositeOrderAsConstructors)",
+            "name": ".NET Core Launch (InitializersRunInOppositeOrderAsConstructorsV1)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/InitializersRunInOppositeOrderAsConstructors/bin/Debug/net7.0/InitializersRunInOppositeOrderAsConstructors.dll",
+            "program": "${workspaceFolder}/InitializersRunInOppositeOrderAsConstructorsV1/bin/Debug/net7.0/InitializersRunInOppositeOrderAsConstructorsV1.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/InitializersRunInOppositeOrderAsConstructors",
+            "cwd": "${workspaceFolder}/InitializersRunInOppositeOrderAsConstructorsV1",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Launch (InitializersRunInOppositeOrderAsConstructorsV2)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/InitializersRunInOppositeOrderAsConstructorsV2/bin/Debug/net7.0/InitializersRunInOppositeOrderAsConstructorsV2.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/InitializersRunInOppositeOrderAsConstructorsV2",
             "console": "internalConsole",
             "stopAtEntry": false
         },
