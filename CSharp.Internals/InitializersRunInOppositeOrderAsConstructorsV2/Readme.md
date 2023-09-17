@@ -5,7 +5,18 @@
 
 Class members initialization execution order:  
 
-TODO
+## Constructing an instance of Derived / MoreDerived 
+and uncommenting in Base constructor:
+
+```CSharp
+if (this is Derived)
+{
+    (this as Derived).DoIt();
+}
+```
+leads to NullReferenceException
+
+## Constructing an instance of MoreDerived
 
 Printed output:  
 
