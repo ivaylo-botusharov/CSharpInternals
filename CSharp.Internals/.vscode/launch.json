@@ -40,6 +40,17 @@
             "stopAtEntry": false
         },
         {
+            "name": ".NET Core Launch (HelloWorldWithIL)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/HelloWorldWithIL/bin/Debug/net9.0/HelloWorldWithIL.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/HelloWorldWithIL",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
