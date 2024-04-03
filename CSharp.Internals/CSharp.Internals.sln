@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldWithIL", "HelloWo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordType", "RecordType\RecordType.csproj", "{99AE8FFF-C55B-4952-A3A2-41248C7F042B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EqualityOrderComparisonMoney", "EqualityOrderComparisonMoney\EqualityOrderComparisonMoney.csproj", "{FE7B4A5D-0F48-408C-A891-F43EF9C1BB15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{99AE8FFF-C55B-4952-A3A2-41248C7F042B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99AE8FFF-C55B-4952-A3A2-41248C7F042B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99AE8FFF-C55B-4952-A3A2-41248C7F042B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE7B4A5D-0F48-408C-A891-F43EF9C1BB15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7B4A5D-0F48-408C-A891-F43EF9C1BB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7B4A5D-0F48-408C-A891-F43EF9C1BB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7B4A5D-0F48-408C-A891-F43EF9C1BB15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
