@@ -51,6 +51,17 @@
             "stopAtEntry": false
         },
         {
+            "name": ".NET Core Launch (RecordType)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/RecordType/bin/Debug/net9.0/RecordType.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/RecordType",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"

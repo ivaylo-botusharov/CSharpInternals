@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InitializersRunInOppositeOr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldWithIL", "HelloWorldWithIL\HelloWorldWithIL.csproj", "{BFFA94FE-7264-4F71-9244-493B0786A474}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordType", "RecordType\RecordType.csproj", "{99AE8FFF-C55B-4952-A3A2-41248C7F042B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{BFFA94FE-7264-4F71-9244-493B0786A474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFFA94FE-7264-4F71-9244-493B0786A474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFFA94FE-7264-4F71-9244-493B0786A474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99AE8FFF-C55B-4952-A3A2-41248C7F042B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99AE8FFF-C55B-4952-A3A2-41248C7F042B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99AE8FFF-C55B-4952-A3A2-41248C7F042B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99AE8FFF-C55B-4952-A3A2-41248C7F042B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

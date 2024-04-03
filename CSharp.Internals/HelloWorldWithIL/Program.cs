@@ -16,10 +16,18 @@ Type typeFromAssembly = GetTypeFromAssembly(assemblyPath, typeName);
 
 InvokeMethodFromType(typeFromAssembly, methodName);
 
-void CreateAndSavePrinterAssembly(string assemblyName, string assemblyPath, string typeName, string methodName, string message)
+void CreateAndSavePrinterAssembly(
+    string assemblyName,
+    string assemblyPath,
+    string typeName,
+    string methodName,
+    string message)
 {
     AssemblyName assemblyNameInstance = new(assemblyName);
-    AssemblyBuilder assemblyBuilder = AssemblyBuilder.DefinePersistedAssembly(assemblyNameInstance, typeof(object).Assembly);
+    
+    AssemblyBuilder assemblyBuilder = AssemblyBuilder.DefinePersistedAssembly(
+        assemblyNameInstance,
+        typeof(object).Assembly);
 
     ModuleBuilder moduleBuilder = assemblyBuilder.DefineDynamicModule(name: assemblyName);
 
