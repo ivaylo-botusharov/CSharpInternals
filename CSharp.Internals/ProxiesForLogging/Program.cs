@@ -22,9 +22,9 @@ static ServiceProvider ConfigureServices()
         loggingBuilder.ClearProviders();
         loggingBuilder.AddConsole();
     });
-    
-    _ = services.AddTransient<IProxyGenerator, ProxyGenerator>();
-    _ = services.AddTransient<LoggingInterceptor>();
+
+    _ = services.AddSingleton<LoggingInterceptor>();
+    _ = services.AddSingleton<IProxyGenerator, ProxyGenerator>();
 
     _ = services.AddTransient<Customer>();
     _ = services.AddTransient((IServiceProvider provider) =>
@@ -38,11 +38,10 @@ static ServiceProvider ConfigureServices()
     return serviceProvider;
 }
 
-static TInterface BuildProxy<TInterface, TBusinessClass, TInterceptor>(
-    IServiceProvider provider)
-        where TInterface: class
-        where TBusinessClass : class, TInterface
-        where TInterceptor : class, IInterceptor
+static TInterface BuildProxy<TInterface, TBusinessClass, TInterceptor>(IServiceProvider provider)
+    where TInterface: class
+    where TBusinessClass : class, TInterface
+    where TInterceptor : class, IInterceptor
 {
     if (!typeof(TInterface).IsInterface)
     {
