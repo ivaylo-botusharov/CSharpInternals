@@ -9,7 +9,9 @@ using Interceptors;
 ServiceProvider serviceProvider = ConfigureServices();
 
 var customer = serviceProvider.GetRequiredService<ICustomer>();
-customer.PlaceOrder(123);
+bool isOrderSuccess = customer.PlaceOrder(123);
+
+Console.WriteLine($"Order placed: {isOrderSuccess}");
 
 static ServiceProvider ConfigureServices()
 {
@@ -20,34 +22,35 @@ static ServiceProvider ConfigureServices()
         loggingBuilder.ClearProviders();
         loggingBuilder.AddConsole();
     });
-
+    
     _ = services.AddTransient<IProxyGenerator, ProxyGenerator>();
     _ = services.AddTransient<LoggingInterceptor>();
 
+    _ = services.AddTransient<Customer>();
     _ = services.AddTransient((IServiceProvider provider) =>
     {
         ICustomer customerProxy = BuildProxy<ICustomer, Customer, LoggingInterceptor>(provider);
         return customerProxy;
     });
 
-
     ServiceProvider serviceProvider = services.BuildServiceProvider();
 
     return serviceProvider;
 }
 
-static TInterface BuildProxy<TInterface, TBusinessClass, TInterceptor>(IServiceProvider provider)
-    where TInterface: class
-    where TBusinessClass : class, TInterface, new()
-    where TInterceptor : class, IInterceptor
+static TInterface BuildProxy<TInterface, TBusinessClass, TInterceptor>(
+    IServiceProvider provider)
+        where TInterface: class
+        where TBusinessClass : class, TInterface
+        where TInterceptor : class, IInterceptor
 {
     if (!typeof(TInterface).IsInterface)
     {
         throw new ArgumentException("TInterface must be an interface");
     }
 
-    TBusinessClass businessObject = new();
-
+    TBusinessClass businessObject = provider.GetRequiredService<TBusinessClass>();
+    
     var proxyGenerator = provider.GetRequiredService<IProxyGenerator>();
     var interceptor = provider.GetRequiredService<TInterceptor>();
 
@@ -62,14 +65,15 @@ namespace Clients
 {
     public interface ICustomer
     {
-        void PlaceOrder(int orderId);
+        bool PlaceOrder(int orderId);
     }
 
     internal class Customer: ICustomer
     {
-        public void PlaceOrder(int orderId)
+        public bool PlaceOrder(int orderId)
         {
             Console.WriteLine($"Placing order: {orderId}");
+            return true;
         }
     }
 }
