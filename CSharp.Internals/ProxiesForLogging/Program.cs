@@ -10,8 +10,13 @@ ServiceProvider serviceProvider = ConfigureServices();
 
 var customer = serviceProvider.GetRequiredService<ICustomer>();
 bool isOrderSuccess = customer.PlaceOrder(123);
-
 Console.WriteLine($"Order placed: {isOrderSuccess}");
+
+customer.PerformTransaction();
+
+var admin = serviceProvider.GetRequiredService<IAdmin>();
+bool isUserAdded = admin.AddUser("John Doe");
+Console.WriteLine($"User added: {isUserAdded}");
 
 static ServiceProvider ConfigureServices()
 {
@@ -32,6 +37,8 @@ static ServiceProvider ConfigureServices()
         ICustomer customerProxy = BuildProxy<ICustomer, Customer, LoggingInterceptor>(provider);
         return customerProxy;
     });
+
+    _ = services.AddTransient<IAdmin, Admin>();
 
     ServiceProvider serviceProvider = services.BuildServiceProvider();
 
@@ -65,6 +72,8 @@ namespace Clients
     public interface ICustomer
     {
         bool PlaceOrder(int orderId);
+
+        void PerformTransaction();
     }
 
     internal class Customer: ICustomer
@@ -72,6 +81,25 @@ namespace Clients
         public bool PlaceOrder(int orderId)
         {
             Console.WriteLine($"Placing order: {orderId}");
+            return true;
+        }
+
+        public void PerformTransaction()
+        {
+            Console.WriteLine("Performing transaction");
+        }
+    }
+
+    public interface IAdmin
+    {
+        bool AddUser(string userName);
+    }
+
+    public class Admin : IAdmin
+    {
+        public bool AddUser(string userName)
+        {
+            Console.WriteLine($"Adding user: {userName}");
             return true;
         }
     }
