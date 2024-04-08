@@ -13,7 +13,7 @@ customer.PlaceOrder(123);
 
 static ServiceProvider ConfigureServices()
 {
-    var services = new ServiceCollection();
+    ServiceCollection services = new();
 
     services.AddLogging(loggingBuilder =>
     {
@@ -21,20 +21,12 @@ static ServiceProvider ConfigureServices()
         loggingBuilder.AddConsole();
     });
 
-    services.AddTransient<IProxyGenerator, ProxyGenerator>();
-    services.AddTransient<LoggingInterceptor>();
+    _ = services.AddTransient<IProxyGenerator, ProxyGenerator>();
+    _ = services.AddTransient<LoggingInterceptor>();
 
-    services.AddTransient<ICustomer>(provider => 
+    _ = services.AddTransient((IServiceProvider provider) =>
     {
-        var customer = new Customer();
-        var loggingInterceptor = provider.GetRequiredService<LoggingInterceptor>();
-        
-        var proxyGenerator = provider.GetRequiredService<IProxyGenerator>();
-
-        ICustomer customerProxy = proxyGenerator.CreateInterfaceProxyWithTarget<ICustomer>(
-            customer,
-            loggingInterceptor);
-
+        ICustomer customerProxy = BuildProxy<ICustomer, Customer, LoggingInterceptor>(provider);
         return customerProxy;
     });
 
@@ -44,6 +36,28 @@ static ServiceProvider ConfigureServices()
     return serviceProvider;
 }
 
+static TInterface BuildProxy<TInterface, TBusinessClass, TInterceptor>(IServiceProvider provider)
+    where TInterface: class
+    where TBusinessClass : class, TInterface, new()
+    where TInterceptor : class, IInterceptor
+{
+    if (!typeof(TInterface).IsInterface)
+    {
+        throw new ArgumentException("TInterface must be an interface");
+    }
+
+    TBusinessClass businessObject = new();
+
+    var proxyGenerator = provider.GetRequiredService<IProxyGenerator>();
+    var interceptor = provider.GetRequiredService<TInterceptor>();
+
+    TInterface businessObjectProxy = proxyGenerator.CreateInterfaceProxyWithTarget<TInterface>(
+        businessObject,
+        interceptor);
+
+    return businessObjectProxy;
+}
+
 namespace Clients
 {
     public interface ICustomer
@@ -51,7 +65,7 @@ namespace Clients
         void PlaceOrder(int orderId);
     }
 
-    public class Customer: ICustomer
+    internal class Customer: ICustomer
     {
         public void PlaceOrder(int orderId)
         {
@@ -62,7 +76,7 @@ namespace Clients
 
 namespace Interceptors
 {
-    public class LoggingInterceptor : IInterceptor
+    internal class LoggingInterceptor : IInterceptor
     {
         private readonly ILogger logger;
 
