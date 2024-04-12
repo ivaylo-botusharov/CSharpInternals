@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceGenerators", "SourceG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldGenerator", "HelloWorldGenerator\HelloWorldGenerator.csproj", "{14A399E7-5D2F-43F4-9425-0E3DC213BC4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldGeneratorWithStringSource", "HelloWorldGeneratorWithStringSource\HelloWorldGeneratorWithStringSource.csproj", "{4E6A0EB2-B28B-4799-B176-F0AA09B8055E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{14A399E7-5D2F-43F4-9425-0E3DC213BC4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14A399E7-5D2F-43F4-9425-0E3DC213BC4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14A399E7-5D2F-43F4-9425-0E3DC213BC4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E6A0EB2-B28B-4799-B176-F0AA09B8055E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E6A0EB2-B28B-4799-B176-F0AA09B8055E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E6A0EB2-B28B-4799-B176-F0AA09B8055E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E6A0EB2-B28B-4799-B176-F0AA09B8055E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
