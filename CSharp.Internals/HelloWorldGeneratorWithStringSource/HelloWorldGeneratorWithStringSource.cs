@@ -3,7 +3,7 @@
 namespace HelloWorldGeneratorWithStringSource;
 
 [Generator]
-public class HelloSourceGenerator : ISourceGenerator
+public class HelloWorldGeneratorWithStringSource : ISourceGenerator
 {
     public void Execute(GeneratorExecutionContext context)
     {
