@@ -8,6 +8,6 @@ Fin<Either<Error, string>> productDetails = await productService
     .Run();
 
 productDetails.Match(
-    Succ: either => either.IfRight(productDetails => Console.WriteLine(productDetails)),
+    Succ: either => either.IfRight(details => Console.WriteLine(details)),
     Fail: error => Console.WriteLine($"Error: {error.Message}")
 );
