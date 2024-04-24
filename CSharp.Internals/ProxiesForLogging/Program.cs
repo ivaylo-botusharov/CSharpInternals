@@ -55,6 +55,16 @@ static TInterface BuildProxy<TInterface, TBusinessClass, TInterceptor>(IServiceP
         throw new ArgumentException("TInterface must be an interface");
     }
 
+    if (!typeof(TBusinessClass).IsClass)
+    {
+        throw new ArgumentException("TBusinessClass must be a class");
+    }
+
+    if (!typeof(TInterceptor).IsClass)
+    {
+        throw new ArgumentException("TInterceptor must be a class");
+    }
+
     TBusinessClass businessObject = provider.GetRequiredService<TBusinessClass>();
     
     var proxyGenerator = provider.GetRequiredService<IProxyGenerator>();
