@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 var customer = new Customer();
 customer.PlaceOrder(1); // invokes OrderInterceptor() and prints "Order interceptor: 1"
@@ -28,7 +27,13 @@ namespace Sales
 namespace System.Runtime.CompilerServices
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    public sealed class InterceptsLocationAttribute(string filePath, int line, int character) : Attribute
+    public sealed class InterceptsLocationAttribute: Attribute
     {
+        public InterceptsLocationAttribute(string filePath, int line, int character)
+        {
+            _ = filePath;
+            _ = line;
+            _ = character;
+        }
     }
 }

@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldGenerator", "Hell
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldGeneratorWithStringSource", "HelloWorldGeneratorWithStringSource\HelloWorldGeneratorWithStringSource.csproj", "{4E6A0EB2-B28B-4799-B176-F0AA09B8055E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodHidingMethodOverriding", "MethodHidingMethodOverriding\MethodHidingMethodOverriding.csproj", "{5A0F6247-6E9B-4351-A372-4D5B89832513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqJoinExample", "LinqJoinExample\LinqJoinExample.csproj", "{A1BD067B-36D5-42CD-B64E-C0574B099FB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{4E6A0EB2-B28B-4799-B176-F0AA09B8055E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E6A0EB2-B28B-4799-B176-F0AA09B8055E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E6A0EB2-B28B-4799-B176-F0AA09B8055E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A0F6247-6E9B-4351-A372-4D5B89832513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A0F6247-6E9B-4351-A372-4D5B89832513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A0F6247-6E9B-4351-A372-4D5B89832513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A0F6247-6E9B-4351-A372-4D5B89832513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1BD067B-36D5-42CD-B64E-C0574B099FB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1BD067B-36D5-42CD-B64E-C0574B099FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1BD067B-36D5-42CD-B64E-C0574B099FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1BD067B-36D5-42CD-B64E-C0574B099FB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
